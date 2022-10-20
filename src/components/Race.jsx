@@ -1,8 +1,8 @@
-import { useState, useEffect } from 'react';
-import Contestant from './Contestant.jsx';
-import { contestantStyles } from '../styles';
-import { contestantData } from '../assets/data';
-import { useNavigate } from 'react-router-dom';
+import { useState, useEffect } from "react";
+import Contestant from "./Contestant.jsx";
+import { contestantStyles } from "../styles";
+import { contestantData } from "../assets/data";
+import { useNavigate } from "react-router-dom";
 
 function Race(props) {
   const [contestants, setContestants] = useState(contestantData);
@@ -10,14 +10,14 @@ function Race(props) {
 
   const handleStop = () => {
     props.stopTimer();
-    navigateTo('/config');
+    navigateTo("/config");
   };
 
   useEffect(() => {
     let newContestantPos = contestants.map((contestant) => {
       return {
         ...contestant,
-        xpos: contestant.xpos + Math.floor(Math.random() * 10),
+        xpos: contestant.xpos + Math.floor(Math.random() * 20) - 10,
       };
     });
     setContestants(newContestantPos);

@@ -1,10 +1,10 @@
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
-import './App.css';
-import Configuration from './components/Configuration';
-import Timer from './components/Timer';
-import Race from './components/Race';
-import { useState, useRef } from 'react';
-import Background from './components/Background';
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import "./App.css";
+import Configuration from "./components/Configuration";
+import Timer from "./components/Timer";
+import Race from "./components/Race";
+import { useState, useRef } from "react";
+import Background from "./components/Background";
 
 function App() {
   const [currentTime, setCurrentTime] = useState(0);
@@ -17,14 +17,14 @@ function App() {
     }, 1000);
   }
   function stopTimer() {
-    console.log('stopping');
+    console.log("stopping");
     clearInterval(interval.current);
   }
 
   return (
     <>
       <Router>
-        <Link to="/config">Config Screen</Link> |{' '}
+        <Link to="/config">Config Screen</Link> |{" "}
         <Link to="/timer">Timer Screen</Link>
         <Routes>
           <Route
